@@ -93,6 +93,7 @@ tasks.withType(Test) {
 
 task various_tests(type: Test) {
     useJUnitPlatform {
-        includeTags 'various_tests'
+        includeTags 'web_tests'
+        includeTags 'api_tests'
     }
 }
