@@ -1,4 +1,4 @@
-package xyz.egorivanov;
+package xyz.egorivanov.tests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
