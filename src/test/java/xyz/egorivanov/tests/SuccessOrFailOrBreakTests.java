@@ -1,5 +1,6 @@
 package xyz.egorivanov.tests;
 
+import xyz.egorivanov.examples.Layer;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 import org.opentest4j.AssertionFailedError;
@@ -16,6 +17,7 @@ import static io.qameta.allure.Allure.step;
 class SuccessOrFailOrBreakTests extends TestBase {
 
     @Test
+    @Layer("web")
     @DisplayName("This test throws AssertionFailedError sometimes")
     @Description("If test is to fail then throw an exception, otherwise don't")
     @Severity(SeverityLevel.TRIVIAL)
@@ -30,6 +32,7 @@ class SuccessOrFailOrBreakTests extends TestBase {
     }
 
     @Test
+    @Layer("web")
     @DisplayName("Assert generated value against 2 and throw exception")
     @Description("Generated random int is tested against 3 and if less then test will fail")
     @Severity(SeverityLevel.NORMAL)
@@ -43,6 +46,7 @@ class SuccessOrFailOrBreakTests extends TestBase {
         });
     }
     @Test
+    @Layer("web")
     @DisplayName("Assert generated value against 1 and throw runtime exception if less")
     @Description("Generated random int is tested against 3 and if less then runtime exception will be thrown")
     @Severity(SeverityLevel.CRITICAL)
@@ -56,6 +60,7 @@ class SuccessOrFailOrBreakTests extends TestBase {
         });
     }
     @Test
+    @Layer("web")
     @DisplayName("Assert generated value against 5 and throw runtime exception if less")
     @Description("Generated random int is tested against 3 and if less then runtime exception will be thrown")
     @Severity(SeverityLevel.MINOR)
@@ -70,6 +75,7 @@ class SuccessOrFailOrBreakTests extends TestBase {
         });
     }
     @Test
+    @Layer("web")
     @DisplayName("This test will always pass as we'll trick the assertion")
     @Description("Generated random int is tested against 3 and if less then runtime exception will be thrown")
     @Severity(SeverityLevel.MINOR)
