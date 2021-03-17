@@ -26,7 +26,7 @@ class SuccessOrFailOrBreakWebTests extends TestBase {
     @Story("If test is to fail then throw an exception, otherwise don't")
     @Severity(SeverityLevel.TRIVIAL)
     public void throwingAssertionFailedError() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Check if test needs to fail, then fail", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
             if (isTestAFailure < 2 ) {
@@ -42,7 +42,7 @@ class SuccessOrFailOrBreakWebTests extends TestBase {
     @Story("Generated random int is tested against 3 and if less then test will fail")
     @Severity(SeverityLevel.NORMAL)
     public void assertEqualsWithFailTest() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Attach random value as text to the step", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
         });
@@ -60,11 +60,11 @@ class SuccessOrFailOrBreakWebTests extends TestBase {
     @Story("Generated random int is tested against 3 and if less then runtime exception will be thrown")
     @Severity(SeverityLevel.CRITICAL)
     public void compareGeneratedWithFixedAndThrowRuntimeExceptionTest() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Attach random value as text to the step", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
             if (isTestAFailure < 1 ) {
-                throw new RuntimeException("Reason to live not found");
+                throw new RuntimeException("FailThreshold less than 1");
             }
         });
     }
@@ -76,7 +76,7 @@ class SuccessOrFailOrBreakWebTests extends TestBase {
     @Severity(SeverityLevel.MINOR)
     @Flaky
     public void flakyRandomizedTest() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Attach random value as text to the step", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
         });
@@ -87,12 +87,11 @@ class SuccessOrFailOrBreakWebTests extends TestBase {
     @Test
     @Layer("web")
     @Microservice("process_order")
-    @DisplayName("This test will always pass as we'll trick the assertion")
+    @DisplayName("This test will always pass")
     @Story("Generated random int is tested against 3 and if less then runtime exception will be thrown")
     @Severity(SeverityLevel.MINOR)
-    @Flaky
     public void goodTestWhichPasses() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Attach random value as text to the step", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
 

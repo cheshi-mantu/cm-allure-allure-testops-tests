@@ -29,7 +29,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
     @Story("We get isTestAFailure from @BeforeEach method and throw assertion erorr if less than 1")
     @Severity(SeverityLevel.TRIVIAL)
     public void throwingAssertionFailedError() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Storing the text attachment", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
             if (isTestAFailure < 1 ) {
@@ -45,7 +45,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
     @Story("Get random value from @BeforeEach and then compare with 1, if less then throw assertion error")
     @Severity(SeverityLevel.NORMAL)
     public void assertEqualsWithFailTest() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Storing the text attachment", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
             if (isTestAFailure < 1 ) {
@@ -60,7 +60,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
     @Story("Get random value from @BeforeEach and then compare with 1, if less then throw runtime exception error")
     @Severity(SeverityLevel.CRITICAL)
     public void compareGeneratedWithFixedAndThrowRuntimeExceptionTest() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Storing the text attachement", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
         });
@@ -76,7 +76,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
     @Severity(SeverityLevel.MINOR)
     @Flaky
     public void flakyRandomizedTest() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Storing the text attachment", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
         });
@@ -92,7 +92,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
     @Severity(SeverityLevel.MINOR)
     @Flaky
     public void goodTestWhichPasses() {
-        parameter("ReasonToLive", isTestAFailure);
+        parameter("FailThreshold", isTestAFailure);
         step ("Attaching isTestAFailure as text to the test results", () -> {
             attachAsText("isTestAFailure",isTestAFailure+"");
 
