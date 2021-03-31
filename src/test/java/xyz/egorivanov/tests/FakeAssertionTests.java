@@ -21,16 +21,16 @@ import static io.qameta.allure.Allure.step;
 class FakeAssertionTests extends TestBase {
 
     @Test
-    @Layer("web")
-    @Microservice("billing")
-    @DisplayName("Assertion")
+    @Layer("core")
+    @Microservice("ServiceDesk")
+    @DisplayName("Assertion of random value against 5")
     @Story("If test is to fail then throw an exception, otherwise don't")
     @TmsLink("AES-804")
     @Severity(SeverityLevel.TRIVIAL)
     public void assertRandpomAgainstFive() {
-        parameter("FailThreshold", isTestAFailure);
+        parameter("RandomValue", isTestAFailure);
         step ("Check if test needs to fail, then fail", () -> {
-            attachAsText("isTestAFailure",isTestAFailure+"");
+            attachAsText("Random value",isTestAFailure+"");
             assert(5 > isTestAFailure);
         });
     }
