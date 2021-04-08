@@ -97,3 +97,8 @@ task various_tests(type: Test) {
         includeTags 'api_tests'
     }
 }
+task test_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags 'test_tests'
+    }
+}

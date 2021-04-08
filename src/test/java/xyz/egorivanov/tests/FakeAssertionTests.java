@@ -34,7 +34,23 @@ class FakeAssertionTests extends TestBase {
             assert(5 > isTestAFailure);
         });
     }
-
+    @Test
+    @Tag("test_tests")
+    @AllureId("11211")
+    @DisplayName("This is to be imported to IntelliJ IDEA")
+    @Layer("core")
+    @Microservice("ServiceDesk")
+    @Story("Allure and IDEA")
+    @Severity(SeverityLevel.CRITICAL)
+    public void importFromAlluretestOps() {
+        step("Open IntelliJ IDEA");
+        step("Create a new method");
+        step("Right click on method's name and import");
+        step("Provide this case's ID (11211)");
+        step("Clean the build folder");
+        step("Run the test");
+        step("Upload the results");
+    }
 
 
 }
