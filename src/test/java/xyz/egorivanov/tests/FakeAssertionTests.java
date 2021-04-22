@@ -51,6 +51,4 @@ class FakeAssertionTests extends TestBase {
         step("Run the test");
         step("Upload the results");
     }
-
-
 }
