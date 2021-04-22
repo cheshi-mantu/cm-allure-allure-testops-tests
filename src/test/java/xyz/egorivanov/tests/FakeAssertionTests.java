@@ -4,6 +4,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.runners.Suite;
 import org.opentest4j.AssertionFailedError;
 import xyz.egorivanov.examples.Layer;
 import xyz.egorivanov.examples.Lead;
@@ -29,6 +30,7 @@ class FakeAssertionTests extends TestBase {
     @Severity(SeverityLevel.TRIVIAL)
     public void assertRandpomAgainstFive() {
         parameter("RandomValue", isTestAFailure);
+        parameter("Fixed to compare with", 5);
         step ("Check if test needs to fail, then fail", () -> {
             attachAsText("Random value",isTestAFailure+"");
             assert(5 > isTestAFailure);
@@ -38,7 +40,7 @@ class FakeAssertionTests extends TestBase {
     @Tag("test_tests")
     @AllureId("11211")
     @DisplayName("This is to be imported to IntelliJ IDEA")
-    @Layer("core")
+    @Layer("UI")
     @Microservice("ServiceDesk")
     @Story("Allure and IDEA")
     @Severity(SeverityLevel.CRITICAL)
