@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SuccessOrFailOrBreakAPITests extends TestBase {
 
     @Test
-    @Layer("API")
+    @Layer("api")
     @Microservice("billing")
     @DisplayName("Fake API test with possible assertion error")
     @Story("We get isTestAFailure from @BeforeEach method and throw assertion erorr if less than 1")
@@ -39,7 +39,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
     }
 
     @Test
-    @Layer("API")
+    @Layer("api")
     @Microservice("store_order")
     @DisplayName("Fake API test to assert generated value against 1 and throw exception if less")
     @Story("Get random value from @BeforeEach and then compare with 1, if less then throw assertion error")
@@ -54,7 +54,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
         });
     }
     @Test
-    @Layer("API")
+    @Layer("api")
     @Microservice("store_order")
     @DisplayName("Fake API test to Assert generated 1 against 1 and pass the test")
     @Story("Get random value from @BeforeEach and then compare with 1, if less then throw runtime exception error")
@@ -69,7 +69,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
         });
     }
     @Test
-    @Layer("API")
+    @Layer("api")
     @Microservice("process_order")
     @DisplayName("Fake API test to Assert generated value against 1 and throw runtime exception if less")
     @Story("Generated random int is tested against 5, this test will be a flaky one")
@@ -85,7 +85,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
         });
     }
     @Test
-    @Layer("API")
+    @Layer("api")
     @Microservice("process_order")
     @DisplayName("Fake API test to always pass as we'll trick the assertion")
     @Story("Generated random int is tested against 3 and if less then runtime exception will be thrown")
@@ -98,7 +98,7 @@ class SuccessOrFailOrBreakAPITests extends TestBase {
 
         });
         step ("Assertion will always pass", () -> {
-            assert(isTestAFailure<11);
+            assert(isTestAFailure < 11);
         });
     }
 

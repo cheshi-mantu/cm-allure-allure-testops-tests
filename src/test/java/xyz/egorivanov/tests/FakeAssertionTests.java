@@ -33,14 +33,14 @@ class FakeAssertionTests extends TestBase {
         parameter("Fixed to compare with", 5);
         step ("Check if test needs to fail, then fail", () -> {
             attachAsText("Random value",isTestAFailure+"");
-            assert(5 > isTestAFailure);
+            assert(5 < isTestAFailure);
         });
     }
     @Test
     @Tag("test_tests")
     @AllureId("11211")
     @DisplayName("This is to be imported to IntelliJ IDEA")
-    @Layer("UI")
+    @Layer("web")
     @Microservice("ServiceDesk")
     @Story("Allure and IDEA")
     @Severity(SeverityLevel.CRITICAL)
