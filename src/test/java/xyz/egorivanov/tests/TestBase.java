@@ -49,6 +49,6 @@ public class TestBase {
     @AfterEach
     public void afterEach(){
         step("System out to console after each test", () -> {
-ч        });
+        });
     }
 }
