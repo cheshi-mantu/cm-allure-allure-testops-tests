@@ -4,8 +4,6 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.runners.Suite;
-import org.opentest4j.AssertionFailedError;
 import xyz.egorivanov.examples.Layer;
 import xyz.egorivanov.examples.Lead;
 import xyz.egorivanov.examples.Microservice;

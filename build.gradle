@@ -68,6 +68,9 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 tasks.withType(Test) {
+
+    useJUnitPlatform {
+    }
     systemProperties = System.properties
     testLogging {
         // set options for log level LIFECYCLE
@@ -90,14 +93,3 @@ tasks.withType(Test) {
 
 }
 
-task various_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags 'web_tests'
-        includeTags 'api_tests'
-    }
-}
-task test_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags 'test_tests'
-    }
-}

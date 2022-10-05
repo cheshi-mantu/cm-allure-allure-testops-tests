@@ -14,58 +14,19 @@ public class TestBase {
     public int isTestAFailure = 10;
     @BeforeAll
     public static void setUpBeforeAll() {
-        step("Setting up all the tests", () -> {
+        step("Before all with sout", () -> {
             System.out.println("This is running before all the tests");
         });
-        step("Setup results", () -> {
+        step("Before all with a txt attachment", () -> {
             attachAsText("fooText", "@BeforeAll completed successfully");
         });
-        step("AES-823 - 1", () -> {
-            System.out.println("This is running before all the tests");
-        });
-        step("AES-823 - 2", () -> {
-            attachAsText("fooText", "@BeforeAll completed successfully");
-        });step("Setting up all the tests", () -> {
-            System.out.println("This is running before all the tests");
-        });
-        step("AES-823 - 3", () -> {
-            attachAsText("fooText", "@BeforeAll completed successfully");
-        });step("Setting up all the tests", () -> {
-            System.out.println("This is running before all the tests");
-        });
-        step("AES-823 - 4", () -> {
-            attachAsText("fooText", "@BeforeAll completed successfully");
-        });step("Setting up all the tests", () -> {
-            System.out.println("This is running before all the tests");
-        });
-        step("AES-823 - 5", () -> {
-            attachAsText("fooText", "@BeforeAll completed successfully");
-        });step("Setting up all the tests", () -> {
-            System.out.println("This is running before all the tests");
-        });
-        step("AES-823 - 6", () -> {
-            attachAsText("fooText", "@BeforeAll completed successfully");
-        });
-        step("AES-823 - 7", () -> {
-            attachAsText("fooText", "@BeforeAll completed successfully");
-        });step("Setting up all the tests", () -> {
-            System.out.println("This is running before all the tests");
-        });
-        step("AES-823 - 8", () -> {
-            attachAsText("fooText", "@BeforeAll completed successfully");
-        });
-        step("AES-823 - 9", () -> {
-            attachAsText("fooText", "@BeforeAll completed successfully");
-        });step("Setting up all the tests", () -> {
-            System.out.println("This is running before all the tests");
-        });
-        step("AES-823 - 10", () -> {
+        step("Another step in Before all with txt attach", () -> {
             attachAsText("fooText", "@BeforeAll completed successfully");
         });
     }
     @BeforeEach
     public void setUpEachTest() {
-        step("This step decides if a test fill fail based on random value", () -> {
+        step("Before each with a random value", () -> {
             if (failTest < 0 ) {
                 isTestAFailure = getRandomInt(0, 10);
             }
@@ -82,48 +43,12 @@ public class TestBase {
         step("Setup results", () -> {
             attachAsText("fooText", "@BeforeEach completed successfully");
         });
-        step("AES-823 - 1", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 2", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 3", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 4", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 5", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 6", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 7", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 8", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 9", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 10", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
-        step("AES-823 - 11", () -> {
-            attachAsText("fooText", "@BeforeEach completed successfully");
-        });
 
     }
 
     @AfterEach
     public void afterEach(){
         step("System out to console after each test", () -> {
-            AttachmentsHelper.attachAsText("After each text 1", "three");
-            AttachmentsHelper.attachAsText("After each text 2", "two");
-            AttachmentsHelper.attachAsText("After each text 3", "One!");
-        });
+ч        });
     }
 }
